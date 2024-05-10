@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".vscode/settings.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1715360200076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1715360575443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,22 +5,7 @@\n \t\t\"editorBracketHighlight.foreground3\": \"#85309f\",\n \t\t\"editorBracketHighlight.foreground4\": \"#00a3b6\",\n \t\t\"editorBracketHighlight.foreground5\": \"#88ff10\",\n \t\t\"editorBracketHighlight.foreground6\": \"#9a9a9a\",\n-\t\t\"editorBracketHighlight.unexpectedBracket.foreground\": \"#e3363c\",\n-\t\t\"activityBar.background\": \"#65c89b\",\n-\t\t\"activityBar.activeBackground\": \"#65c89b\",\n-\t\t\"activityBar.foreground\": \"#15202b\",\n-\t\t\"activityBar.inactiveForeground\": \"#15202b99\",\n-\t\t\"activityBarBadge.background\": \"#945bc4\",\n-\t\t\"activityBarBadge.foreground\": \"#e7e7e7\",\n-\t\t\"editorGroup.border\": \"#65c89b\",\n-\t\t\"panel.border\": \"#65c89b\",\n-\t\t\"sash.hoverBorder\": \"#65c89b\",\n-\t\t\"sideBar.border\": \"#65c89b\",\n-\t\t\"statusBar.background\": \"#42b883\",\n-\t\t\"statusBar.foreground\": \"#15202b\",\n-\t\t\"statusBarItem.hoverBackground\": \"#359268\",\n-\t\t\"statusBarItem.remoteBackground\": \"#42b883\",\n-\t\t\"statusBarItem.remoteForeground\": \"#15202b\"\n+\t\t\"editorBracketHighlight.unexpectedBracket.foreground\": \"#e3363c\"\n \t}\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1715360200076,
+            "name": "Commit-0",
+            "content": "{\n\t\"workbench.colorCustomizations\": {\n\t\t\"editorBracketHighlight.foreground1\": \"#92c5ef\",\n\t\t\"editorBracketHighlight.foreground2\": \"#f59c02\",\n\t\t\"editorBracketHighlight.foreground3\": \"#85309f\",\n\t\t\"editorBracketHighlight.foreground4\": \"#00a3b6\",\n\t\t\"editorBracketHighlight.foreground5\": \"#88ff10\",\n\t\t\"editorBracketHighlight.foreground6\": \"#9a9a9a\",\n\t\t\"editorBracketHighlight.unexpectedBracket.foreground\": \"#e3363c\",\n\t\t\"activityBar.background\": \"#65c89b\",\n\t\t\"activityBar.activeBackground\": \"#65c89b\",\n\t\t\"activityBar.foreground\": \"#15202b\",\n\t\t\"activityBar.inactiveForeground\": \"#15202b99\",\n\t\t\"activityBarBadge.background\": \"#945bc4\",\n\t\t\"activityBarBadge.foreground\": \"#e7e7e7\",\n\t\t\"editorGroup.border\": \"#65c89b\",\n\t\t\"panel.border\": \"#65c89b\",\n\t\t\"sash.hoverBorder\": \"#65c89b\",\n\t\t\"sideBar.border\": \"#65c89b\",\n\t\t\"statusBar.background\": \"#42b883\",\n\t\t\"statusBar.foreground\": \"#15202b\",\n\t\t\"statusBarItem.hoverBackground\": \"#359268\",\n\t\t\"statusBarItem.remoteBackground\": \"#42b883\",\n\t\t\"statusBarItem.remoteForeground\": \"#15202b\"\n\t}\n}"
+        }
+    ]
+}
