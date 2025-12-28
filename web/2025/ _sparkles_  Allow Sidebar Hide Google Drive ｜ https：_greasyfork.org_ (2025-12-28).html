@@ -1,0 +1,509 @@
+<!DOCTYPE html> <html lang=en autocopy=true><!--
+ Page saved with SingleFile 
+ url: https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive 
+ saved date: Sun Dec 28 2025 01:20:19 GMT-0800 (Pacific Standard Time)
+--><meta charset=utf-8><style class=lum-base-styles>@keyframes lum-noop{0%{zoom:1}}</style>
+<title>✨ Allow Sidebar Hide Google Drive | https://greasyfork.org/</title>
+<meta name=description value="Google Drive Folder/File List wide, create button to hide google drive left side bar so there're more estate for showing file name">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<style media=screen>:root{--overall-background-color:#F6F6F6;--overall-text-color:black;--link-color:#670000;--link-visited-color:#A42121;--texty-link-visited-color:#333;--content-background-color:white;--content-border-color:#BBBBBB;--content-box-shadow-color:#DDDDDD;--content-separator-color:#DDDDDD;--tab-active-background-color:rgba(0,0,0,.03);--tab-active-box-shadow-color:rgba(0,0,0,.1);--tab-active-top-border-color:#990000;--inactive-item-background-color:#F5F5F5;--code-background-color:#F2E5E5;--user-content-background-color-gradient-1:#fcf1f1;--user-content-background-color-gradient-2:#FFF;--user-content-border-left-color:#F2E5E5;--list-option-background-color-gradient-1:white;--list-option-background-color-gradient-2:#EEEEEE;--list-option-hover-background-color-gradient-1:white;--list-option-hover-background-color-gradient-2:#F6F6F6;--list-option-hover-box-shadow-top:#DDDDDD;--list-option-hover-box-shadow-bottom:#EEEEEE;--notice-background-color:#D9EDF7;--notice-border-color:#31708F;--notice-text-color:black;--alert-background-color:#FFFFCC;--alert-border-color:#FFEB3B;--alert-text-color:black;--chart-background-color:#dcdcdc;--chart-border-color:rgb(220,220,220);--highlight-background-color:#ffc;--rating-icon-good-border-color:rgb(77,166,77);--rating-icon-good-background-color:rgb(230,242,230);--rating-icon-good-color:rgb(0,128,0);--rating-icon-ok-border-color:rgb(211,211,77);--rating-icon-ok-background-color:rgb(255,255,230);--rating-icon-ok-color:rgb(192,192,0);--rating-icon-bad-border-color:rgb(255,77,77);--rating-icon-bad-background-color:rgb(255,230,230);--rating-icon-bad-color:rgb(255,0,0);--expander-color:#670000;--expander-background-color:#F2E5E5;--pagination-background-color:#F2E5E5;--pagination-hover-background-color:#E2C5C5;--diff-del-background:#FEE;--diff-del-color:#B00;--diff-ins-background:#DFD;--diff-ins-color:#080;--diff-del-strong-background:#FCC;--diff-ins-strong-background:#9F9;--diff-block-info:gray;--field-with-errors:#FEE;--list-option-button-background-color:white;--list-option-button-color:black;--list-option-button-border-color:#BBB;--list-option-button-background-color-gradient-1:white;--list-option-button-background-color-gradient-2:#F6F6F6;--code-container-border-color:#E6DDD6;--prettyprint-background-color:white;--prettyprint-color:black;--sidebar-background:white;--close-sidebar-background:#EEE;--close-sidebar-border-bottom:black}@media (prefers-color-scheme:dark){:root{color-scheme:dark;scrollbar-color:#454a4d #202324;--overall-background-color:#0A0A0A;--overall-text-color:white;--link-color:#e95757;--link-visited-color:#c24141;--texty-link-visited-color:#DDD;--content-background-color:black;--content-border-color:#666;--content-box-shadow-color:#888;--content-separator-color:#333;--tab-active-background-color:rgba(255,255,255,.1);--tab-active-box-shadow-color:rgba(255,255,255,.1);--inactive-item-background-color:#333;--code-background-color:#321919;--user-content-background-color-gradient-1:#2e1111;--user-content-background-color-gradient-2:#000;--user-content-border-left-color:#461414;--list-option-background-color-gradient-1:#111;--list-option-background-color-gradient-2:#222222;--list-option-hover-background-color-gradient-1:#1d1e1e;--list-option-hover-background-color-gradient-2:#2a2c2d;--list-option-hover-box-shadow-top:#3a3a3a;--list-option-hover-box-shadow-bottom:#2a2c2d;--notice-background-color:#0E3041;--notice-text-color:white;--alert-background-color:#3D3D00;--alert-border-color:#A19000;--alert-text-color:white;--chart-background-color:#606060;--chart-border-color:#454545;--highlight-background-color:#550;--rating-icon-ok-border-color:rgb(135,135,33);--rating-icon-ok-background-color:rgb(49,49,0);--rating-icon-ok-color:rgb(255,255,70);--rating-icon-bad-border-color:rgb(155,0,0);--rating-icon-bad-background-color:rgb(32,0,0);--rating-icon-bad-color:rgb(255,26,26);--rating-icon-good-border-color:rgb(58,124,58);--rating-icon-good-background-color:rgb(31,49,25);--rating-icon-good-color:rgb(114,255,114);--expander-color:#e95757;--expander-background-color:#321919;--pagination-background-color:#321919;--pagination-hover-background-color:#452222;--diff-del-background:#3D0000;--diff-del-color:#FF4949;--diff-ins-background:#124700;--diff-ins-color:#6DFF6D;--diff-del-strong-background:#520000;--diff-ins-strong-background:#1c7000;--diff-block-info:#60686C;--field-with-errors:#3d0000;--list-option-button-background-color:#181a1b;--list-option-button-color:#e8e6e3;--list-option-button-border-color:#43494c;--list-option-button-background-color-gradient-1:#232526;--list-option-button-background-color-gradient-2:#181a1b;--code-container-border-color:#4c3b2e;--prettyprint-background-color:#181a1b;--prettyprint-color:#e8e6e3;--sidebar-background:#181a1b;--close-sidebar-background:#222426;--close-sidebar-border-bottom:#8c8273}}html{overflow-y:scroll}body{margin:0;background-color:var(--overall-background-color);color:var(--overall-text-color)}body,select,input{font-family:Open Sans,sans-serif,"Segoe UI Emoji"}code{direction:ltr!important}a{color:var(--link-color)}a:visited{color:var(--link-visited-color)}.width-constraint{margin:auto;max-width:1200px}@media screen and (max-width:1228px){.width-constraint{margin:auto 1.2vw}}@media screen and (max-width:400px){.width-constraint{margin:auto 0}}.block-list{padding-left:0;padding-right:0;list-style:none}.block-list{display:block;margin:0}.block-list li{display:inline}.block-list li:after{content:", "}.block-list li:last-child:after{content:""}#script-info{padding:0 1em 1em}#script-info>*:last-child{margin-bottom:0}.script-description{unicode-bidi:isolate}@media screen and (max-width:960px){#script-info{padding:0 1.2vw 1.2vw}}@media screen and (max-width:400px){#script-info{padding-left:1em;padding-right:1em}#script-links{margin-left:-1em;margin-right:-1em;padding:0}#additional-info{margin-left:-1em;margin-right:-1em}}#script-description{word-wrap:break-word}@media screen and (max-width:720px){#script-content{margin-left:unset}}.good-rating-count,.ok-rating-count,.bad-rating-count{display:inline-block;min-width:1em;text-align:center;padding:0 .25em;border:1px solid #DDDDDD;border-radius:10px}.good-rating-count{background-color:#339b331a;border-color:#339b334d;color:#339b33}.ok-rating-count{background-color:#9b9b001a;border-color:#9b9b004d;color:#9b9b00}.bad-rating-count{background-color:#9b33331a;border-color:#9b33334d;color:#9b3333}.ad{margin-top:1em;margin-bottom:1em}code{background-color:var(--code-background-color)}code{border-radius:2px}.collapsed{overflow:hidden}#main-header{background-color:#670000;background-image:linear-gradient(#670000,#900);box-shadow:0 0 15px 2px #00000080;padding:.25em 0}#main-header .width-constraint{padding:0 0 .25em;position:relative}#site-name img{vertical-align:bottom}#site-name-text{display:inline-block;vertical-align:top}#site-name-text h1{line-height:1.1em}#main-header,#main-header a,#main-header a:visited,#main-header a:active{color:#fff}#main-header h1{font-size:72px;margin:0;letter-spacing:-2px}#main-header h1 a{text-decoration:none}#site-nav>nav,#nav-user-info{text-align:end;position:absolute;right:0}#site-nav>nav{bottom:0}#nav-user-info{top:0}#site-nav>nav a:hover{color:#fff}#site-nav>nav{padding:0}#site-nav>nav>li{list-style-type:none;display:inline-block}#site-nav>nav>li+li{margin-left:.5em}.language-selector{display:inline}#nav-user-info{font-size:small}#nav-user-info select,#nav-user-info input{font-size:11px}nav nav{position:absolute;right:0;background-color:#900;min-width:100%;display:none;padding:5px 0;z-index:10}nav nav li{white-space:nowrap;margin:0}nav nav li a{display:block;padding:5px 15px}nav a:hover+nav,nav nav:hover,nav a:focus+nav{display:block}.with-submenu{position:relative;padding-right:15px}nav .with-submenu>a:after{content:" ▾"}@media screen and (max-width:920px){#site-name img{max-width:96px;max-height:96px;width:12%;height:12%}#site-name-text{margin-top:1.15vw;margin-bottom:1.15vw}#main-header h1{font-size:8.3vw}#site-nav{margin-top:-1vw}#site-nav>nav,#nav-user-info{display:block;position:unset;right:unset;padding-top:.3em}#site-nav>nav{bottom:unset}#nav-user-info{top:unset;font-size:unset;width:100%}#nav-user-info .sign-in-link{padding-right:.7em}.language-selector{display:unset}}#mobile-nav{display:none}.mobile-nav-opener{cursor:pointer;position:absolute;right:0;top:0;font-size:8.3vw;padding:0 2vw}#mobile-nav .collapsed{display:none}#mobile-nav nav{text-align:end;position:absolute;top:calc(100% + 4px);right:-1.2vw;background-color:#900;z-index:1000;border-radius:0 0 0 5px;font-size:24px}#mobile-nav nav li{list-style-type:none}#mobile-nav nav li>a{display:block;padding:10px 15px}#mobile-nav nav select{margin:10px 15px}#mobile-nav nav li.multi-link-nav{padding:10px 15px}#mobile-nav nav li.multi-link-nav a{display:inline;padding:0}@media screen and (max-width:920px){#site-nav{display:none}#mobile-nav{display:block}}@media screen and (max-width:400px){#site-name{margin-left:1em}}#install-area{margin-bottom:1em}#install-area .install-link:hover,#install-area .install-link:focus,#install-area .install-help-link:hover,#install-area .install-help-link:focus{transition:box-shadow .2s;box-shadow:0 8px 16px #0003,0 6px 20px #00000030}.install-link,.install-link:visited,.install-link:active,.install-link:hover,.install-help-link{transition:box-shadow .2s;display:inline-block;background-color:#005200;padding:.5em 1em;color:#fff;text-decoration:none;border-radius:.25rem 0 0 .25rem}.install-help-link,.install-help-link:visited,.install-help-link:active,.install-help-link:hover{background-color:#1e971e;color:#fff;border-radius:0 .25rem .25rem 0}.installation-instructions-modal-content-firefox,.installation-instructions-modal-content-chrome,.installation-instructions-modal-content-opera,.installation-instructions-modal-content-safari,.installation-instructions-modal-content-edge,.installation-instructions-modal-content-other{display:none}.installation-instructions-modal-content-bypass{font-size:smaller}::backdrop{background:#00000080}@media (prefers-color-scheme:dark){::backdrop{background:#fff9}}dialog{background-color:var(--content-background-color);color:var(--content-color);padding:30px;max-width:500px;max-height:100vh;border-radius:4px;overflow-y:auto;box-sizing:border-box}.modal__header{display:flex;justify-content:space-between;align-items:center}.modal__title{margin-top:0!important;margin-bottom:0;font-weight:600;font-size:1rem;line-height:1.25;box-sizing:border-box}.modal__close{background:transparent;border:0;padding:0}.modal__header .modal__close:before{content:"✕"}.modal__content{margin-bottom:2rem}.modal__btn{font-size:.875rem;padding:.5rem 1rem;background-color:#e6e6e6;color:#000c;border-radius:.25rem;border-style:none;border-width:0;cursor:pointer;-webkit-appearance:button;text-transform:none;overflow:visible;line-height:1.15;margin:0 0 0 .5rem;will-change:transform;-moz-osx-font-smoothing:grayscale;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translateZ(0);transform:translateZ(0);transition:transform .25s ease-out,-webkit-transform .25s ease-out}.modal__btn:focus,.modal__btn:hover{-webkit-transform:scale(1.05);transform:scale(1.05)}.modal__footer{text-align:right}:not(:lang(he)):not(:lang(ar)):not(:lang(ug)):not(:lang(ckb)){direction:ltr}#script-info{border:1px solid var(--content-border-color);border-radius:5px;clear:left;background-color:var(--content-background-color);margin:1em 0 0;box-shadow:0 0 5px var(--content-box-shadow-color)}#script-content{margin-top:1.5em}#script-content>*:first-child{margin-top:0}#script-info header h2{margin:.25em 0 0;font-size:2em;overflow-wrap:anywhere}#script-description{margin:0}#script-feedback-suggestion{margin:.75em 0}.script-meta-block{max-width:600px;column-count:2}.script-meta-block>*:last-child{margin-bottom:1em}.inline-script-stats{display:grid;grid-template-columns:max-content auto;margin:0 22px 0 0}.inline-script-stats,.inline-script-stats dt,.inline-script-stats dd{vertical-align:top;padding:0;font-size:small}.inline-script-stats dt,.inline-script-stats dd{box-sizing:border-box;overflow-wrap:break-word;margin:1px 0}.inline-script-stats dt{font-weight:700;text-align:end;padding-inline-end:1em}dd.script-list-ratings{margin-top:0;margin-bottom:0}@media screen and (max-width:600px){.script-meta-block{column-count:1}}.tabs{list-style:none;padding:0 1em;margin:0-1em;display:flex;position:relative;top:-3.5px;flex-wrap:wrap}.tabs>*{align-items:stretch}.tabs>*>*{padding:.25em .5em .5em;display:block}.tabs a{text-decoration:none;cursor:pointer}.tabs .current,.tabs>*:not(.current) a:hover,.tabs>*:not(.current) a:focus{background:var(--tab-active-background-color);box-shadow:inset 1px 0 var(--tab-active-box-shadow-color),inset -1px 0 var(--tab-active-box-shadow-color),inset 0-1px var(--tab-active-box-shadow-color)}.tabs .current{border-top:7px solid var(--tab-active-top-border-color)}.tabs>*:not(.current) a{margin-top:3.5px;padding-top:calc(.25em + 3.5px)}.user-content{background:linear-gradient(to right,var(--user-content-background-color-gradient-1),var(--user-content-background-color-gradient-2) 1em);border-left:2px solid var(--user-content-border-left-color);padding:.5em 1em;overflow-x:auto}.user-content>p:first-child{margin-top:0}.user-content img{max-width:100%}.user-screenshots *{vertical-align:middle}.user-screenshots a{text-decoration:none}#additional-info .user-screenshots{margin-top:1em}@keyframes lum-fade{0%{opacity:0}to{opacity:1}}@keyframes lum-fadeZoom{0%{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}@keyframes lum-loader-rotate{0%{transform:translate(-50%,-50%) rotate(0)}50%{transform:translate(-50%,-50%) rotate(-180deg)}to{transform:translate(-50%,-50%) rotate(-360deg)}}@keyframes lum-loader-before{0%{transform:scale(1)}10%{transform:scale(1.2) translate(6px)}25%{transform:scale(1.3) translate(8px)}40%{transform:scale(1.2) translate(6px)}50%{transform:scale(1)}60%{transform:scale(.8) translate(6px)}75%{transform:scale(.7) translate(8px)}90%{transform:scale(.8) translate(6px)}to{transform:scale(1)}}@keyframes lum-loader-after{0%{transform:scale(1)}10%{transform:scale(1.2) translate(-6px)}25%{transform:scale(1.3) translate(-8px)}40%{transform:scale(1.2) translate(-6px)}50%{transform:scale(1)}60%{transform:scale(.8) translate(-6px)}75%{transform:scale(.7) translate(-8px)}90%{transform:scale(.8) translate(-6px)}to{transform:scale(1)}}</style>
+<meta name=csrf-param content=authenticity_token>
+<meta name=csrf-token content=JPVLgB3dvXzhyuROm18-upTMwL3V_batIQMYOBLW65rIOFLo0BIhBK5zZ1xs23tZ2HxUlUD3dvD3SxKiD1dnvQ>
+<meta name=clckd content=bf6242cc3039bff31a7815dff8ee247b>
+<meta name=lhverifycode content=32dc01246faccb7f5b3cad5016dd5033>
+<link rel=canonical href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=x-default href=https://greasyfork.org/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ar href=https://greasyfork.org/ar/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=be href=https://greasyfork.org/be/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=bg href=https://greasyfork.org/bg/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ckb href=https://greasyfork.org/ckb/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=cs href=https://greasyfork.org/cs/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=da href=https://greasyfork.org/da/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=de href=https://greasyfork.org/de/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=el href=https://greasyfork.org/el/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=en href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=eo href=https://greasyfork.org/eo/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=es href=https://greasyfork.org/es/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=es-419 href=https://greasyfork.org/es-419/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=fi href=https://greasyfork.org/fi/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=fr href=https://greasyfork.org/fr/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=fr-CA href=https://greasyfork.org/fr-CA/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=he href=https://greasyfork.org/he/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=hr href=https://greasyfork.org/hr/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=hu href=https://greasyfork.org/hu/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=id href=https://greasyfork.org/id/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=it href=https://greasyfork.org/it/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ja href=https://greasyfork.org/ja/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ka href=https://greasyfork.org/ka/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ko href=https://greasyfork.org/ko/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=mr href=https://greasyfork.org/mr/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=nb href=https://greasyfork.org/nb/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=nl href=https://greasyfork.org/nl/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=pl href=https://greasyfork.org/pl/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=pt-BR href=https://greasyfork.org/pt-BR/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ro href=https://greasyfork.org/ro/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ru href=https://greasyfork.org/ru/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=sk href=https://greasyfork.org/sk/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=sr href=https://greasyfork.org/sr/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=sv href=https://greasyfork.org/sv/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=th href=https://greasyfork.org/th/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=tr href=https://greasyfork.org/tr/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=uk href=https://greasyfork.org/uk/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=ug href=https://greasyfork.org/ug/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=vi href=https://greasyfork.org/vi/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=zh-CN href=https://greasyfork.org/zh-CN/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate hreflang=zh-TW href=https://greasyfork.org/zh-TW/scripts/430049-allow-sidebar-hide-google-drive>
+<link rel=alternate type=application/json href=https://api.greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive.json>
+<link rel=alternate type=application/javascript href="https://api.greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive.jsonp?callback=callback">
+<link rel=search href=https://greasyfork.org/en/opensearch.xml type=application/opensearchdescription+xml title="Greasy Fork search" hreflang=en>
+<meta name=twitter:card content=summary>
+<meta property=og:title content="Allow Sidebar Hide Google Drive">
+<meta property=og:url content=https://greasyfork.org/scripts/430049-allow-sidebar-hide-google-drive>
+<meta property=og:description content="Google Drive Folder/File List wide, create button to hide google drive left side bar so there're more estate for showing file name">
+<meta property=og:image content=https://greasyfork.s3.us-east-2.amazonaws.com/k24rh14a9wa1hr38z0trwckmhhp3>
+<style>html{--block-btn-color:#111;--block-btn-bgcolor:#eee}html{--hyperlink-blacklisted-option-opacity:0.5;--hyperlink-hidden-option-opacity:0.5}html{--blacklisted-display:none;--hidden-display:none}</style><style id=greasyfork-enhance-basic>html{scroll-behavior:smooth}a.anchor::before{content:"#"}a.anchor{opacity:0;text-decoration:none;padding:0px 0.5em;transition:all 0.25s ease-in-out}h2:hover>a.anchor{opacity:1;transition:all 0.25s ease-in-out}a.button{margin:0.5em 0 0 0;display:flex;align-items:center;justify-content:center;text-decoration:none;color:black;background-color:#a42121ab;border-radius:50%;width:2em;height:2em;font-size:1.8em;font-weight:bold}#float-buttons{position:fixed;bottom:1em;right:1em;display:flex;flex-direction:column;user-select:none;z-index:1}aside.panel{display:none}.dynamic-opacity{transition:opacity 0.2s ease-in-out;opacity:0.2}.dynamic-opacity:hover{opacity:0.8}@media (any-hover:none){.dynamic-opacity{opacity:0.8}.dynamic-opacity:hover{opacity:0.8}}@media screen and (min-width:767px){aside.panel{display:contents;line-height:1.5}ul.outline{position:sticky;float:right;padding:0 0 0 0.5em;margin:0 0.5em -99vh;max-height:80vh;border:1px solid var(--content-border-color);box-shadow:0 0 5px var(--content-box-shadow-color);background:var(--content-background-color);list-style:none;width:10.5%;color:var(--overall-text-color);border-radius:5px;overflow-y:scroll;z-index:1}ul.outline>li{overflow:hidden;text-overflow:ellipsis}ul.outline>li>a{color:var(--overall-text-color);white-space:nowrap;text-decoration:none}}ul{padding-left:1.5em}</style><style id=greasyfork-enhance-codeblocks.animation>:root{--animate-duration:1s;--animate-delay:1s;--animate-repeat:1}@keyframes tada{from{transform:scale3d(1,1,1)}10%,20%{transform:scale3d(0.9,0.9,0.9) rotate3d(0,0,1,-3deg)}30%,50%,70%,90%{transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)}40%,60%,80%{transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)}to{transform:scale3d(1,1,1)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{from{opacity:1}to{opacity:0}}</style><meta name=referrer content=no-referrer><link rel=icon href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggEBCQHM3fXsAAAAVdJREFUOMudkz2qwkAUhc/goBaGJBgUtBCZyj0ILkpwAW7Bws4yO3AHLiCtEFD8KVREkoiFxZzX5A2KGfN4F04zMN+ce+5c4LMUgDmANYBnrnV+plBSi+FwyHq9TgA2LQpvCiEiABwMBtzv95RSfoNEHy8DYBzHrNVqVEr9BWKcqNFoxF6vx3a7zc1mYyC73a4MogBg7vs+z+czO50OW60Wt9stK5UKp9Mpj8cjq9WqDTBHnjAdxzGQZrPJw+HA31oulzbAWgLoA0CWZVBKIY5jzGYzdLtdE9DlcrFNrY98zobqOA6TJKHW2jg4nU5sNBpFDp6mhVe5rsvVasUwDHm9Xqm15u12o+/7Hy0gD8KatOd5vN/v1FozTVN6nkchxFuI6hsAAIMg4OPxMJCXdtTbR7JJCMEgCJhlGUlyPB4XfumozInrupxMJpRSRtZlKoNYl+m/6/wDuWAjtPfsQuwAAAAASUVORK5CYII="><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><body><contextsearch-widgets id=contextsearch-widgets style=--cs-zoom:2;--cs-scale:calc(1/var(--cs-zoom,1)*var(--cs-custom-scale,1))><template shadowrootmode=open><style>:host{all:initial!important}</style>
+ </template></contextsearch-widgets>
+ <header id=main-header>
+ <div class=width-constraint>
+ <div id=site-name>
+ <a href=https://greasyfork.org/en><img alt width=96 height=96 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gYRBAceMUIR3QAAEg9JREFUeNrtXWlwVNW2/k4n3RkbM5FRMEHUBOIAekGMJV4lYVDBAeQ+IYTJODAVjwBXfRZFQRn04vthiQgGEOMDiylY4lB6g1CG8VFJLF4SSYiBRBDTSZM06aQzdH/vB+ccex5Id9IBV9WuJDvnnL3P+s7+9tprr723gBsUkkoAEAShG96VQABqAOHiz+EARog/7wAwGECkmMLEe/QAropJA+AigPMAKsWfbQCuianH7B2iAOgFQehEP4kA/xClqOQHANwL4B4AdwEYCiCkl8/uAFAPoAbAOQBnAZQDqALQhVtcEgAsB3AcwG/il0ofpzaxrONi2Qm3ksIFAFEAxgHYDqDVE+VJEhISwoKCAra0tFCj0TA/P9/uddb363Q6/vTTT/Lfw4YNo0KhaBXrMk6sm3CzKj8JwKsAvlGpVO2zZ8/mkSNHePnyZRoMBrsKcwTAnj17aC2LFi1yCYB1/vnz57ljxw7p73YA34h1TLqZFB8MIDcwMLBi6NChHUuXLuXFixdpT9wF4MyZMxw5ciQHDRrEjz/+mCR5+vRpjwGw/jszM5NRUVEdACoA5Ip1H7ASC+A5AP/rLf6WZMyYMXJeQkICSfLatWu9BqCjo4Pfffed+T0lAB4xs7YGjEwRrQ2jNztQSVQqlUeKdfc6B/e1ANgEIG0gKD4QwGYA3QCoUCgoCAIFQWBqaip//fVXOhN3AfBUsQCoUqluFACK73MBwGwACn+mnN0ATEqlki+//DIrKyu5detWJiUlySCcPXuWJpPJpwA0NjaSJBMTE+W8sWPH9gYAKRkA/Et8V7+SvwE4JFFOQkICT58+TZLs7u7mgQMHOGTIEK9RkKv8Y8eOkSQ3b95MtVrNESNG8MyZM94AgOJI+pD4zn5h108BUG1eyYiICBYVFckv1N3dzeLiYkZGRvYJAPPmzbNpXXv37vUYABeAVIvv3m/jhgAATwO4bK+Co0aNYnl5uYUSiouLOWTIEAqC4FMAADA/P58ajYatra389NNPGRoa6pHCIyMjSZLV1dXO6nRZ1EFAXytfBWCp6NxyWMFRo0bx2LFjMudLdHT77bf72t3Q67R48WLq9Xred999rq5tFscMqr788v9TdGS5fJHU1FSZk83pKCIiwq8BKC0t5bx589y9XiuCENAXnP+s6GFkUFAQU1JSmJiYSEGhcNoSvE1HfpiaRTryaZ8wBcAfUqFz5sxhXV0dy8vL+cL06QwIDHQKQklJiQ0decM68qN0WdSRz0zNGvMCd+3aJX/Rly5d4vQZM5y2hIFKRx6mal+YqLEAvrYubMqUKfKghyTr6+s5ITPzLzq6Pk7w2mBNIY7+bPw6QUFBzM3NpUajsQBhuht0ZM86uonoqEfUmVfcFh8BMDkqLCgoiNnZ2ezo6PiLjmzdFrO90el2C4LAQCdfNABmZ2dbtISGhgZmZWU5BWH06NG9piN3/Ui+8Mq6ce0FAKm94f2zkmNt/fr1fOSRR+isJdiloxkzvGIdeTIK9iMAukVX9g3NJ7wCwDRlyhTq9XoajUbW19czKyuLntLRDC/QkeTKHoBU1CJO6ng8jfgbAM6cOZPd3d0WCp00aRIDAgLcpiNvWEeSK3uA9gclnk5v5ko3h4eHc8eOHezq6iJJmkwmVlRUcNKkSQ4LVNmho4aGBs7oBR0JgsBHH32UZ8+etaAAazpQKpVctWoVy8rKqNfrqdfrWVZWxry8PIt+zN0IC3cpyN7zGhsbOWfOHOmaXE+iF/4PAJ944gkCYGxsLAsLC9nT0yODcOnSpRuiI1fW0YQJE6jT6ezSkfXMmrUyVCoVjxw54nDGrbi4WAbB3QgLTwGw9zzR+VjhTrSFIIZltFsXGhcXx0OHDtFoNHpER7PdpCOFQsG0tDRWVVU5VJ4968hcGatWrSJJarVazp07lzExMYyJieG8efPY0tJCkszLy/MowsJTAOw9b+/evVLYy6uufEVRYmyMxcOllhAfH8/CwkKP6Mgd60ihUDAjI4NlZWUOv153rCOpD8nJybGpx/z580mSpaWlHkVYeAqAvefpdDop7xtRxw5lnL2vv7a21oaOpJYg0dHEiROd9gnO6CgtLY1lZWUWrcsRCIcOHWJISIhdZbS3t5Mko6OjbeoQExNDktTr9R5FWHgKgIvntYs6dijbHRVYVVXVazqyZx39x0svOaQdR/Lee+/J5fz++++9AuBGbHxnALhx7XZHyk9wFKtp7+FxcXEe05E960i63xOpra3lPffcQwD88MMPbSgoOzvbpuy5c+fapaB+AKAVDgKCl3s68vOWdeSptLa28sUXXyQALliwwKYTbm5uZnZ2NqOjoxkdHc2cnBxqtVq7nXBfAyC23OXWylfieri22wVKzdxTOpKsnfr6+hsGwGAw8PXXXycA5uTkWJihR48edXjf4cOHqVQq+xWAjIwMirpWmgNwvzTy9aQFDBs2zCM6csfacUfa29u5cOFCGwAkEFatWsXy8nK2t7dTr9ezvLycK1eulJXfnwAUFhZS1PX95gDkoJeLI9yhI3etHVei0WiYmZk5kF3VbaLO5XjOjd54sCM6mjx5MtPT0z22dhzJiRMnGBUVNdDnCzaKukckgK+89WB7dFRdXc2amhqvKF+j0Tgdcwyg9JWoewwB8Is3H25NR94UjUbDkenpNwMAv+D6IkSMsDf69QUdeUsqKio4avRop069AZDaRd1jqq8KsaYjb4nRaGRJSQlHjR490FvBVAD4py8L8RUdGY1GVlRUMG3EiIEMwD8BoMDXBf1FRw5TAQD84KsCli1bxgcffNAv6Kg/Ju/dSD8A15fte/3hw4cPp8FgsBgNx8bGcufOnS7pyNESpt7QUV8DoFKpuGbNGtbW1tJgMLC2tpZr1qyxGI2LusdFX1Tg888/p1artYknui0iglu2bGFTU5MNJXV1dbG6upqLFi3iwYMHPe43/ImO9u3bZ7eO4uyYlC4CgM7bhcfHx7Ozs1Pye9j1iGZlZXHjxo388ssvWVxczN27d/ONN97g/fffT4VCwZiYGBYUFLCzs3PAWUcTJ04kSba0tDArK0t+X2la1MyNosPkyZNNNTU1LqMHgoOD+cEHH/DKlSvs7u52WoElS5aQJBcsWCB7Tjs6OlhTU8OgoCCLZhoZGcnBgwdTrVbbeE8lEDxpCY7oqC8p6LPPPiNJrl692iJ/9erVJMmdO3dKeUbMmjXLdOnSJZfRA+aL3Fy9yMGDB0mSDz30kE0o++LFi22uDw4OZmJiouziLioqkjvvmJgY7t+/v9d0tHXrVpcfjifi7DmSzyvdasSenp5OkqysrPwTgJSUlLaoqCiX0QMNDQ2cPHkyw8LCXH4BtbW1JMnBgwfLeY8//rgcNWB9/ebNm1lWVsbhw4cTAPfs2cO0tDQ5AsIbdBQfH8+tW7f2CQBSWE1oaKhFvrRQsLW19U8Ksu6EHUUPPPvss243wba2NrsT1OfOnSNJpqamWgRjkWRJSYnTZ3qDjtRqdZ9QkFRH6xAaQRDk4ALzTrjcnclrT8LGJQDM+R4A8/LySJLr1q2T86TYmfnz58uTNitWrGBpaSnb2tpYVVXldTrydfKgBZTbDMTcjR5wh4JiY2NtvmLJJpbCHnU6HXU6nUxt77//vo0Cq6qq5LAYX1pH/dAH/GDjinA3esCdTtg8SElKX3zxBUkyIyODr7zyCkmyoKBA/n9TU5Mc2RAZGUmFQsHIyEiL2CRvWke+AMADK6gACQkJa8LDwz2OHnDHDM3NzaW9KDtpH4fS0lKS5Lhx4+T/Nzc3kySnTZtGlUrFlJQU2QIzj03yZzqaNGmSPA7IzMykSqViZmambOA8+eSTfzrjZsyYkfv22297HD3gaiBmMBi4e/duu/+vrq6Ww1LMmqM8graWAwcO2K2HPw/WzOtsLvv377d0Ry9ZsuTvU6dO7fQ0esCdwUhLS4u178Mifse8pUkpMjKShYWFbGpqolar5bZt2xgWFmZTD1/TkTd8QWvXrmVdXR07OztZV1fHtWvXmluG8oTMUG9PSQLgnXfeyY6ODs6cOdPnVsdAsY4cTUl6dVLePK1bt44nTpzokxcagL4jeVLea2Ep/Z38lY5chaV4JTDLn0AYAHRkEZjlMjRxoLYEP6Yjm9BElbPg3L/oyOvpuL0NnpbfTAD4OR0t92iBxl905NXkcIGGwyVK/bDE/2amo+0uF+l9//339iaQvQ6AK0B6uRTIH+nI5SK9KIVC8e3JkyfZ1NRk404eyAD4CR3ZLlMlKVgv1H7qqac6X3rpJZ9TUF8D0M90ZH+htslksl65nRQeHl7l6AXDwsK4fft2trS08PLly1y6dKmFE02r1VKj0XD9+vVeB8BTMb8nKCiIQ4cO9RodBQYGcsWKFdRoNDQYDKypqeG7777LQYMGyfVNTk5mUVERV65c6fZWBTabdVi//P79+20q9swzz/DkyZM2+bNnz/YbAPbt2+f1mbX4+Hh5mawkZ8+epVqtZlRUFOvr6/nzzz9Ls31ub9YhbVdTYk8ZpaWlvPfee6lWq+XCr169ajff/LyW3ii0NxQkSV1dHR977DGGhITI89veoqPAwEA+/PDDPHXqFEkyPz+fGzZsYEdHB5977rkb2q4G4iZDLdYvMnbsWIuJF2f5V65c8RsAnn76acsQydtu87p1lJycTJI8d+4cKysr+fXXXzMoKOiGNmyCuM3WJnHbLZd7IdjLNxqN/d4JSyIpXEpqtdordCRNvD/wwAPyNjqdnZ1sa2vj+PHje1xuWWanEzaXNHHjOTli2dMX91cAIiIiWFtby/Hjx/eKjo4fP87Q0FAGBATwzTffJEn29PTwrbfekjbtc370iZUZak9mAzA0NDT4BQBSRLXCamDkKN8RBU2bNo0k+dVXX/V6sGY9rSpuSeDetpUuWgAgbtz62muvGf0BAGmjj6ysLIvIM0f51p1wWFgYx48fzwsXLpAkN2zYYHeO2RM6KikpYXBwMAHwhRde4F133eXVjVulLSwPbdq0qd8BsLclmLN8Z+ZzfX29fKpHb+KOKisrZctKnAP36tbFkvwtKirqfH8DkJCQwL1791os8HCWL0loaCg/+eQTNjc389q1aywqKmJycrLDPZE8oaOjR4/KYYiCIPhk825JpsDBkSX+mnrjgXWHjoxGo/lBD13w4fb1kq/oaVw/rOCmB0BaXLJp0ya7iwtNJhO3bdsm8b8JwH+hDw71CRCH1dpbAQAADAsLY15eHqurq9nY2MimpibW1tYyPz9fMm9NAApxA+fI3ChaKgBzAeS72gWwv+W67gFB6P2HmZiYiLvvvhtKpRIXLlxAXV0denp6COB/ALwmRjv0mTg9xuoWSUYAa9GHJyjZa0E2B7ndIukygH/ATw6Alo4y7LkFFO9XRxlaD9b+hesnR9ysyvfbwzzN3RazRSdU901kJQ2I42zNJVV0w7YMRAACAgI4c+ZMPv/880xKStIFBAR8hAFyoLP1fMIj1jNr/g5AXFwc33nnHaakpEgzWQPySHPr6c1ccVK63R8BMJlM8hLZMWPGGAIDAyvFOgfjJpIkAK8mJSX9OyMjw6BUKrlx40ZqNBrqdDoeOHCAd9xxh4VyZs2axR9//JFXr151GHkgiauTMKQIhWvXrlGj0fCjjz5iSEgIy8rKpMiOdqVS+a0YOpKEm1QEceQ8DsD2sLAw3YIFC1hSUkKtVsuamhrZPWxvsZ515AHcPAlDilAwGo1sa2tjY2Mjd+3axbS0NAYGBraK4YLjxLoJuIUkAcByQRCOp6WlXVm4cKFh6tSpnDhxIquqqlhVVcXp06czOjqawcHBNpEHcHFyxalTp+Rls/v27eOKFSsYExOjFwThN1wPEV8OJ4Gyt5IocX3BQk5QUNB/x8bGfpeenv6rWq226TOSkpJ44cIFedOPzs5OajQai4OXBw0axGXLlnHChAkE0J6cnHw+Ojr6W1xfFpQjlqXyF0pwKUajMUAQBMV1n5Zg4ehSKBRd4u8q0enVZcchppKudXXdli1bAvfs2aP+448/wvV6fbhOp7uzq6srzWg03knyDpIxJCMBRHR1dYWpVCoA0Hd1dV0FcBWABsDF8PDwOpVKVaXVan8ZOXJkZ1xcXNvhw4ebxZGsRZlSfUwmk0oQBLS3t3eLwVTuOPvsvo+z9zSX/wfl+jWwZp8+ogAAAABJRU5ErkJggg=="></a>
+ <div id=site-name-text>
+ <h1><a href=https://greasyfork.org/en>Greasy Fork</a></h1>
+ </div>
+ </div>
+ <div id=site-nav>
+ <div id=nav-user-info>
+ <span class=sign-in-link><a rel=nofollow href="https://greasyfork.org/en/users/sign_in?return_to=%2Fen%2Fscripts%2F430049">Sign in</a></span>
+ <form class=language-selector action=/scripts/430049-allow-sidebar-hide-google-drive>
+ <select class=language-selector-locale name=locale data-translate-url=https://github.com/greasyfork-org/greasyfork/wiki/Translating-Greasy-Fork>
+ <option data-language-url=/ar/scripts/430049-allow-sidebar-hide-google-drive value=ar>
+ Arabic (ar)
+ </option>
+ <option data-language-url=/be/scripts/430049-allow-sidebar-hide-google-drive value=be>
+ Belarusian (be)
+ </option>
+ <option data-language-url=/nb/scripts/430049-allow-sidebar-hide-google-drive value=nb>
+ Bokmål (nb)
+ </option>
+ <option data-language-url=/bg/scripts/430049-allow-sidebar-hide-google-drive value=bg>
+ Bulgarian (bg)
+ </option>
+ <option data-language-url=/zh-CN/scripts/430049-allow-sidebar-hide-google-drive value=zh-CN>
+ Chinese (China) (zh-CN)
+ </option>
+ <option data-language-url=/zh-TW/scripts/430049-allow-sidebar-hide-google-drive value=zh-TW>
+ Chinese (Taiwan) (zh-TW)
+ </option>
+ <option data-language-url=/hr/scripts/430049-allow-sidebar-hide-google-drive value=hr>
+ Croatian (hr)
+ </option>
+ <option data-language-url=/cs/scripts/430049-allow-sidebar-hide-google-drive value=cs>
+ Czech (cs)
+ </option>
+ <option data-language-url=/da/scripts/430049-allow-sidebar-hide-google-drive value=da>
+ Danish (da)
+ </option>
+ <option data-language-url=/nl/scripts/430049-allow-sidebar-hide-google-drive value=nl>
+ Dutch (nl)
+ </option>
+ <option data-language-url=/en/scripts/430049-allow-sidebar-hide-google-drive value=en selected>
+ English (en)
+ </option>
+ <option data-language-url=/eo/scripts/430049-allow-sidebar-hide-google-drive value=eo>
+ Esperanto (eo)
+ </option>
+ <option data-language-url=/fi/scripts/430049-allow-sidebar-hide-google-drive value=fi>
+ Finnish (fi)
+ </option>
+ <option data-language-url=/fr/scripts/430049-allow-sidebar-hide-google-drive value=fr>
+ French (fr)
+ </option>
+ <option data-language-url=/fr-CA/scripts/430049-allow-sidebar-hide-google-drive value=fr-CA>
+ French (Canada) (fr-CA)
+ </option>
+ <option data-language-url=/ka/scripts/430049-allow-sidebar-hide-google-drive value=ka>
+ Georgian (ka)
+ </option>
+ <option data-language-url=/de/scripts/430049-allow-sidebar-hide-google-drive value=de>
+ German (de)
+ </option>
+ <option data-language-url=/el/scripts/430049-allow-sidebar-hide-google-drive value=el>
+ Greek (el)
+ </option>
+ <option data-language-url=/he/scripts/430049-allow-sidebar-hide-google-drive value=he>
+ Hebrew (he)
+ </option>
+ <option data-language-url=/hu/scripts/430049-allow-sidebar-hide-google-drive value=hu>
+ Hungarian (hu)
+ </option>
+ <option data-language-url=/id/scripts/430049-allow-sidebar-hide-google-drive value=id>
+ Indonesian (id)
+ </option>
+ <option data-language-url=/it/scripts/430049-allow-sidebar-hide-google-drive value=it>
+ Italian (it)
+ </option>
+ <option data-language-url=/ja/scripts/430049-allow-sidebar-hide-google-drive value=ja>
+ Japanese (ja)
+ </option>
+ <option data-language-url=/ko/scripts/430049-allow-sidebar-hide-google-drive value=ko>
+ Korean (ko)
+ </option>
+ <option data-language-url=/mr/scripts/430049-allow-sidebar-hide-google-drive value=mr>
+ Marathi (mr)
+ </option>
+ <option data-language-url=/pl/scripts/430049-allow-sidebar-hide-google-drive value=pl>
+ Polish (pl)
+ </option>
+ <option data-language-url=/pt-BR/scripts/430049-allow-sidebar-hide-google-drive value=pt-BR>
+ Portuguese (Brazil) (pt-BR)
+ </option>
+ <option data-language-url=/ro/scripts/430049-allow-sidebar-hide-google-drive value=ro>
+ Romanian (ro)
+ </option>
+ <option data-language-url=/ru/scripts/430049-allow-sidebar-hide-google-drive value=ru>
+ Russian (ru)
+ </option>
+ <option data-language-url=/sr/scripts/430049-allow-sidebar-hide-google-drive value=sr>
+ Serbian (sr)
+ </option>
+ <option data-language-url=/sk/scripts/430049-allow-sidebar-hide-google-drive value=sk>
+ Slovak (sk)
+ </option>
+ <option data-language-url=/es/scripts/430049-allow-sidebar-hide-google-drive value=es>
+ Spanish (es)
+ </option>
+ <option data-language-url=/es-419/scripts/430049-allow-sidebar-hide-google-drive value=es-419>
+ Spanish (es-419)
+ </option>
+ <option data-language-url=/sv/scripts/430049-allow-sidebar-hide-google-drive value=sv>
+ Swedish (sv)
+ </option>
+ <option data-language-url=/th/scripts/430049-allow-sidebar-hide-google-drive value=th>
+ Thai (th)
+ </option>
+ <option data-language-url=/tr/scripts/430049-allow-sidebar-hide-google-drive value=tr>
+ Turkish (tr)
+ </option>
+ <option data-language-url=/ug/scripts/430049-allow-sidebar-hide-google-drive value=ug>
+ Uighur (ug)
+ </option>
+ <option data-language-url=/uk/scripts/430049-allow-sidebar-hide-google-drive value=uk>
+ Ukrainian (uk)
+ </option>
+ <option data-language-url=/vi/scripts/430049-allow-sidebar-hide-google-drive value=vi>
+ Vietnamese (vi)
+ </option>
+ <option data-language-url=/ckb/scripts/430049-allow-sidebar-hide-google-drive value=ckb>
+ کوردیی ناوەندی (ckb)
+ </option>
+ <option value=help>Help us translate!</option>
+ </select><input class=language-selector-submit type=submit value=→ style=display:none>
+ </form>
+ </div>
+ <nav>
+ <li class=greasyfork-plus alt="Greasy Fork++ 3.3.9" title="Greasy Fork++ 3.3.9"><a href=#>Greasy Fork++</a><li class=scripts-index-link><a href=https://greasyfork.org/en/scripts>Scripts</a></li>
+ <li class=forum-link><a href=https://greasyfork.org/en/discussions>Forum</a></li>
+ <li class=help-link><a href=https://greasyfork.org/en/help>Help</a></li>
+ <li class=with-submenu>
+ <a href=#>More</a>
+ <nav>
+ <li><a href=https://greasyfork.org/en/search>Advanced search</a></li>
+ <li><a href=https://greasyfork.org/en/users>User list</a></li>
+ <li><a href=https://greasyfork.org/en/scripts/libraries>Libraries</a></li>
+ <li><a href=https://greasyfork.org/en/moderator_actions>Moderator log</a></li>
+ </nav>
+ </li>
+ </nav>
+ </div>
+ <div id=mobile-nav>
+ <div class=mobile-nav-opener>☰</div>
+ <nav class=collapsed>
+ <li class=scripts-index-link><a href=https://greasyfork.org/en/scripts>Scripts</a></li>
+ <li class=forum-link><a href=https://greasyfork.org/en/discussions>Forum</a></li>
+ <li class=help-link><a href=https://greasyfork.org/en/help>Help</a></li>
+ <li><a href=https://greasyfork.org/en/search>Advanced search</a></li>
+ <li><a href=https://greasyfork.org/en/users>User list</a></li>
+ <li><a href=https://greasyfork.org/en/scripts/libraries>Libraries</a></li>
+ <li><a href=https://greasyfork.org/en/moderator_actions>Moderator log</a></li>
+ <li class=multi-link-nav>
+ <span class=sign-in-link><a rel=nofollow href="https://greasyfork.org/en/users/sign_in?return_to=%2Fen%2Fscripts%2F430049">Sign in</a></span>
+ </li>
+ <li> <form class=language-selector action=/scripts/430049-allow-sidebar-hide-google-drive>
+ <select class=language-selector-locale name=locale data-translate-url=https://github.com/greasyfork-org/greasyfork/wiki/Translating-Greasy-Fork>
+ <option data-language-url=/ar/scripts/430049-allow-sidebar-hide-google-drive value=ar>
+ Arabic (ar)
+ </option>
+ <option data-language-url=/be/scripts/430049-allow-sidebar-hide-google-drive value=be>
+ Belarusian (be)
+ </option>
+ <option data-language-url=/nb/scripts/430049-allow-sidebar-hide-google-drive value=nb>
+ Bokmål (nb)
+ </option>
+ <option data-language-url=/bg/scripts/430049-allow-sidebar-hide-google-drive value=bg>
+ Bulgarian (bg)
+ </option>
+ <option data-language-url=/zh-CN/scripts/430049-allow-sidebar-hide-google-drive value=zh-CN>
+ Chinese (China) (zh-CN)
+ </option>
+ <option data-language-url=/zh-TW/scripts/430049-allow-sidebar-hide-google-drive value=zh-TW>
+ Chinese (Taiwan) (zh-TW)
+ </option>
+ <option data-language-url=/hr/scripts/430049-allow-sidebar-hide-google-drive value=hr>
+ Croatian (hr)
+ </option>
+ <option data-language-url=/cs/scripts/430049-allow-sidebar-hide-google-drive value=cs>
+ Czech (cs)
+ </option>
+ <option data-language-url=/da/scripts/430049-allow-sidebar-hide-google-drive value=da>
+ Danish (da)
+ </option>
+ <option data-language-url=/nl/scripts/430049-allow-sidebar-hide-google-drive value=nl>
+ Dutch (nl)
+ </option>
+ <option data-language-url=/en/scripts/430049-allow-sidebar-hide-google-drive value=en selected>
+ English (en)
+ </option>
+ <option data-language-url=/eo/scripts/430049-allow-sidebar-hide-google-drive value=eo>
+ Esperanto (eo)
+ </option>
+ <option data-language-url=/fi/scripts/430049-allow-sidebar-hide-google-drive value=fi>
+ Finnish (fi)
+ </option>
+ <option data-language-url=/fr/scripts/430049-allow-sidebar-hide-google-drive value=fr>
+ French (fr)
+ </option>
+ <option data-language-url=/fr-CA/scripts/430049-allow-sidebar-hide-google-drive value=fr-CA>
+ French (Canada) (fr-CA)
+ </option>
+ <option data-language-url=/ka/scripts/430049-allow-sidebar-hide-google-drive value=ka>
+ Georgian (ka)
+ </option>
+ <option data-language-url=/de/scripts/430049-allow-sidebar-hide-google-drive value=de>
+ German (de)
+ </option>
+ <option data-language-url=/el/scripts/430049-allow-sidebar-hide-google-drive value=el>
+ Greek (el)
+ </option>
+ <option data-language-url=/he/scripts/430049-allow-sidebar-hide-google-drive value=he>
+ Hebrew (he)
+ </option>
+ <option data-language-url=/hu/scripts/430049-allow-sidebar-hide-google-drive value=hu>
+ Hungarian (hu)
+ </option>
+ <option data-language-url=/id/scripts/430049-allow-sidebar-hide-google-drive value=id>
+ Indonesian (id)
+ </option>
+ <option data-language-url=/it/scripts/430049-allow-sidebar-hide-google-drive value=it>
+ Italian (it)
+ </option>
+ <option data-language-url=/ja/scripts/430049-allow-sidebar-hide-google-drive value=ja>
+ Japanese (ja)
+ </option>
+ <option data-language-url=/ko/scripts/430049-allow-sidebar-hide-google-drive value=ko>
+ Korean (ko)
+ </option>
+ <option data-language-url=/mr/scripts/430049-allow-sidebar-hide-google-drive value=mr>
+ Marathi (mr)
+ </option>
+ <option data-language-url=/pl/scripts/430049-allow-sidebar-hide-google-drive value=pl>
+ Polish (pl)
+ </option>
+ <option data-language-url=/pt-BR/scripts/430049-allow-sidebar-hide-google-drive value=pt-BR>
+ Portuguese (Brazil) (pt-BR)
+ </option>
+ <option data-language-url=/ro/scripts/430049-allow-sidebar-hide-google-drive value=ro>
+ Romanian (ro)
+ </option>
+ <option data-language-url=/ru/scripts/430049-allow-sidebar-hide-google-drive value=ru>
+ Russian (ru)
+ </option>
+ <option data-language-url=/sr/scripts/430049-allow-sidebar-hide-google-drive value=sr>
+ Serbian (sr)
+ </option>
+ <option data-language-url=/sk/scripts/430049-allow-sidebar-hide-google-drive value=sk>
+ Slovak (sk)
+ </option>
+ <option data-language-url=/es/scripts/430049-allow-sidebar-hide-google-drive value=es>
+ Spanish (es)
+ </option>
+ <option data-language-url=/es-419/scripts/430049-allow-sidebar-hide-google-drive value=es-419>
+ Spanish (es-419)
+ </option>
+ <option data-language-url=/sv/scripts/430049-allow-sidebar-hide-google-drive value=sv>
+ Swedish (sv)
+ </option>
+ <option data-language-url=/th/scripts/430049-allow-sidebar-hide-google-drive value=th>
+ Thai (th)
+ </option>
+ <option data-language-url=/tr/scripts/430049-allow-sidebar-hide-google-drive value=tr>
+ Turkish (tr)
+ </option>
+ <option data-language-url=/ug/scripts/430049-allow-sidebar-hide-google-drive value=ug>
+ Uighur (ug)
+ </option>
+ <option data-language-url=/uk/scripts/430049-allow-sidebar-hide-google-drive value=uk>
+ Ukrainian (uk)
+ </option>
+ <option data-language-url=/vi/scripts/430049-allow-sidebar-hide-google-drive value=vi>
+ Vietnamese (vi)
+ </option>
+ <option data-language-url=/ckb/scripts/430049-allow-sidebar-hide-google-drive value=ckb>
+ کوردیی ناوەندی (ckb)
+ </option>
+ <option value=help>Help us translate!</option>
+ </select><input class=language-selector-submit type=submit value=→ style=display:none>
+ </form>
+</li>
+ </nav>
+ </div>
+ 
+ </div>
+ </header>
+ <aside class=panel><ul class="outline dynamic-opacity" style=top:14px;margin-top:14px><li><a href=#Allow-Sidebar-Hide-Google-Drive>Allow Sidebar Hide Google Drive</a></ul></aside><div class=width-constraint>
+ <section id=script-info>
+ <ul id=script-links class=tabs>
+ <li class=current><a href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive><span>Info</span></a></li>
+ <li><a href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive/code><span>Code</span></a></li>
+ <li><a href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive/versions><span>History</span></a></li>
+ <li><a href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive/feedback><span>Feedback (1)</span></a></li>
+ <li><a href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive/stats><span>Stats</span></a></li>
+ </ul>
+ <header>
+ <h2 id=Allow-Sidebar-Hide-Google-Drive>Allow Sidebar Hide Google Drive<a class=anchor href=#Allow-Sidebar-Hide-Google-Drive></a></h2>
+ <p id=script-description class=script-description>Google Drive Folder/File List wide, create button to hide google drive left side bar so there're more estate for showing file name</p>
+ </header>
+ <p id=greasyfork-enhance-short-link>Short link: <a href=https://greasyfork.org/scripts/430049>https://greasyfork.org/scripts/430049</a><a style=margin-left:1em;cursor:pointer title="Copy short link to clipboard">(Copy)</a><div id=script-content>
+ 
+ <div id=install-area>
+ 
+<a class=install-link data-install-format=js data-post-install-url=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive/post-install data-ip-address=2600:8802:5501:7100:8dac:5ac4:7b8:c7e data-script-id=430049 data-ping-key=9f3d0d1c77c9708d3cdd688ccd7a8db8f4389f7d data-is-previous-version=false data-previous-version-warning="This is not the latest version of this script. If you install it, you will never be updated to a newer version. Install anyway?" rel=nofollow data-script-name="Allow Sidebar Hide Google Drive" data-script-namespace=http://tampermonkey.net/ data-script-version=0.2 data-update-label="Update to version 0.2" data-downgrade-label="Downgrade to version 0.2" data-reinstall-label="Reinstall version 0.2" href=https://update.greasyfork.org/scripts/430049/Allow%20Sidebar%20Hide%20Google%20Drive.user.js>Reinstall version 0.2</a><a class=install-help-link title="How to install" rel=nofollow href=https://greasyfork.org/en/help/installing-user-scripts>?</a>
+ </div>
+<dialog id=installation-instructions-modal-js class=modal closedby=any>
+ <header class=modal__header aria-labelledby=installation-instructions-modal-title>
+ <h3 class=modal__title id=installation-instructions-modal-title>
+ How to install
+ </h3>
+ <button class="modal__close modal__cancel" aria-label="Close modal"></button>
+ </header>
+ <main class=modal__content id=installation-instructions-modal-content>
+ <p class=installation-instructions-modal-content-firefox>
+ You will need to install an extension such as <a target=tampermonkey href=https://addons.mozilla.org/firefox/addon/tampermonkey/>Tampermonkey</a>, <a target=greasemonkey href=https://addons.mozilla.org/firefox/addon/greasemonkey/>Greasemonkey</a> or <a target=violentmonkey href=https://addons.mozilla.org/firefox/addon/violentmonkey/>Violentmonkey</a> to install this script.
+ </p>
+ <p class=installation-instructions-modal-content-chrome>
+ You will need to install an extension such as <a target=tampermonkey href=https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo>Tampermonkey</a> to install this script.
+ </p>
+ <p class=installation-instructions-modal-content-opera>
+ You will need to install an extension such as <a target=tampermonkey href=https://addons.opera.com/extensions/details/tampermonkey-beta/>Tampermonkey</a> or <a target=violentmonkey href=https://violentmonkey.github.io/get-it/>Violentmonkey</a> to install this script.
+ </p>
+ <p class=installation-instructions-modal-content-safari>
+ You will need to install an extension such as <a target=tampermonkey href="https://www.tampermonkey.net/?browser=safari">Tampermonkey</a> or <a target=Userscripts href=https://apps.apple.com/app/userscripts/id1463298887>Userscripts</a> to install this script.
+ </p>
+ <p class=installation-instructions-modal-content-edge>
+ You will need to install an extension such as <a target=tampermonkey href=https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd>Tampermonkey</a> to install this script.
+ </p>
+ <p class=installation-instructions-modal-content-other>
+ You will need to install a user script manager extension to install this script.
+ </p>
+ <p class=installation-instructions-modal-content-bypass>
+ <a href=#>(I already have a user script manager, let me install it!)</a>
+ </p>
+ </main>
+ <footer class=modal__footer>
+ <button class="modal__btn modal__cancel">
+ OK
+ </button>
+ </footer>
+</dialog>
+<dialog id=installation-instructions-modal-css class=modal closedby=any>
+ <header class=modal__header aria-labelledby=installation-instructions-modal-title>
+ <h3 class=modal__title id=installation-instructions-modal-title>
+ How to install
+ </h3>
+ <button class="modal__close modal__cancel" aria-label="Close modal"></button>
+ </header>
+ <main class=modal__content id=installation-instructions-modal-content>
+ <p class=installation-instructions-modal-content-firefox>
+ You will need to install an extension such as <a target=stylus href=https://addons.mozilla.org/firefox/addon/styl-us/>Stylus</a> to install this style.
+ </p>
+ <p class=installation-instructions-modal-content-chrome>
+ You will need to install an extension such as <a target=stylus href=https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne>Stylus</a> to install this style.
+ </p>
+ <p class=installation-instructions-modal-content-opera>
+ You will need to install an extension such as <a target=stylus href=https://addons.opera.com/extensions/details/stylus/>Stylus</a> to install this style.
+ </p>
+ <p class=installation-instructions-modal-content-safari>
+ You will need to install a user style manager extension to install this style.
+ </p>
+ <p class=installation-instructions-modal-content-edge>
+ You will need to install a user style manager extension to install this style.
+ </p>
+ <p class=installation-instructions-modal-content-other>
+ You will need to install a user style manager extension to install this style.
+ </p>
+ <p class=installation-instructions-modal-content-bypass>
+ <a href=#>(I already have a user style manager, let me install it!)</a>
+ </p>
+ </main>
+ <footer class=modal__footer>
+ <button class="modal__btn modal__cancel">
+ OK
+ </button>
+ </footer>
+</dialog>
+ <div class="ad ad-ea" id=script-show-info-ad>
+ <div class=ad-content>
+ <div id=script-show-ea-image class="flat ethical-ads" data-ea-publisher=greasyfork data-ea-type=image></div>
+ </div>
+ </div>
+<div id=script-feedback-suggestion>
+ <a rel=nofollow href=https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive/feedback#post-discussion>Ask a question, post a review</a>, or <a rel=nofollow href="https://greasyfork.org/en/reports/new?item_class=script&amp;item_id=430049">report the script</a>.
+</div>
+<div class=script-meta-block>
+ <dl id=script-stats class=inline-script-stats>
+ <dt class=script-show-author><span>Author</span></dt>
+ <dd class=script-show-author><span><a href=https://greasyfork.org/en/users/746013-benyaminl>benyaminl</a></span></dd>
+ <dt class=script-show-daily-installs><span>Daily installs</span></dt>
+ <dd class=script-show-daily-installs><span>0</span></dd>
+ <dt class=script-show-total-installs><span>Total installs</span></dt>
+ <dd class=script-show-total-installs><span>137</span></dd>
+ <dt class=script-list-ratings><span>Ratings</span></dt>
+ <dd class=script-list-ratings><span>
+<span class=good-rating-count title="Number of people who rated it Good or added it to favorites.">0</span>
+<span class=ok-rating-count title="Number of people who rated it OK.">0</span>
+<span class=bad-rating-count title="Number of people who rated it Bad.">0</span>
+</span></dd>
+ <dt class=script-show-version><span>Version</span></dt>
+ <dd class=script-show-version><span>0.2</span></dd>
+ <dt class=script-show-created-date><span>Created</span></dt>
+ <dd class=script-show-created-date><span><relative-time datetime=2021-07-29T10:25:40+00:00 prefix title="Jul 29, 2021, 3:25 AM PDT"><template shadowrootmode=open>Jul 29, 2021</template>2021-07-29</relative-time></span></dd>
+ <dt class=script-show-updated-date><span>Updated</span></dt>
+ <dd class=script-show-updated-date><span><relative-time datetime=2022-04-07T09:58:26+00:00 prefix title="Apr 7, 2022, 2:58 AM PDT"><template shadowrootmode=open>Apr 7, 2022</template>2022-04-07</relative-time></span></dd>
+ <dt class=script-show-code-size><span>Size</span></dt>
+ <dd class=script-show-code-size><span>2.12 KB</span></dd>
+ <dt class=script-show-license><span>License</span></dt>
+ <dd class=script-show-license><span><a title="MIT License" href=https://spdx.org/licenses/MIT.html>MIT</a></span></dd>
+ <dt class=script-show-applies-to><span>Applies to</span></dt>
+ <dd class=script-show-applies-to>
+ <ul class="block-list expandable">
+ <li><a title="See 2220 other scripts for google.com" href=https://greasyfork.org/en/scripts/by-site/google.com>google.com</a></li>
+ </ul>
+ </dd>
+ </dl>
+</div>
+ <div id=additional-info class=user-content lang=en>
+ <p>This is a simple addons that add button to hide and show left side bar of Google Drive to save more space and show long file name on small screen of computer.</p>
+<p>There is toggle for default collapse, which is <code>defaultCollapsed</code>, you can set it to <code>false</code> so it won't automatically collapsed. </p>
+<p>I will back each month to check whether this code work or not. Thank you for using my script!</p>
+ 
+ <div class=user-screenshots>
+ <a href="https://greasyfork.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NTc4NTIsInB1ciI6ImJsb2JfaWQifX0=--c2b5f08cd3e2e25f796e811460bc6a1cbfd4efce/Drive%20Hide%201.jpg?locale=en"><img src="data:image/jpeg;base64,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" loading=lazy></a>
+ <a href="https://greasyfork.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NTc4NTYsInB1ciI6ImJsb2JfaWQifX0=--112e190ad639b7e50ba4f1cbeffac3ce66530e8c/Drive%20Hide%202.jpg?locale=en"><img src="data:image/jpeg;base64,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" loading=lazy></a>
+ <a href="https://greasyfork.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NzY5NzAsInB1ciI6ImJsb2JfaWQifX0=--228b059d83105c4e9245448ff55e21c342ea9b3c/Collapse%20Work%202.jpg?locale=en"><img src="data:image/jpeg;base64,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" loading=lazy></a>
+ <a href="https://greasyfork.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NzY5NzEsInB1ciI6ImJsb2JfaWQifX0=--e3a7dd21a6f9167db75edf57fcede4d4c304b6f0/Collapse%20Work.jpg?locale=en"><img src="data:image/jpeg;base64,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" loading=lazy></a>
+ </div>
+ </div>
+ </div>
+ </section>
+ </div>
+ 
+<div class=altq-root><div class=qr-toast></div></div><div id=float-buttons><a class="button dynamic-opacity" href=#top>↑</a></div><single-file-infobar style="all: initial !important; direction: initial !important; unicode-bidi: initial !important; --uc-panel-shadow: initial !important; --uc-menupopup-shadow: initial !important; --menupopup-inner-box-margin: initial !important; --purple-60: initial !important; --purple-50: initial !important; --download-button-active-bg: initial !important; --in-content-primary-button-background-active: initial !important; --in-content-primary-button-background-hover: initial !important; --in-content-primary-button-background: initial !important; --in-content-primary-button-text-color: initial !important; --firefoxcss-settings-wheel-color-hover: initial !important; --firefoxcss-settings-wheel-color: initial !important; --firefoxcss-item-hover-bg-color: initial !important; --firefoxcss-item-bg-color: initial !important; --obsidian-clipper-background-primary-rgb: initial !important; --obsidian-clipper-background-primary: initial !important; --obsidian-clipper-text-muted: initial !important; --obsidian-clipper-background-opacity: initial !important; --animate-repeat: initial !important; --animate-delay: initial !important; --animate-duration: initial !important; --close-sidebar-border-bottom: initial !important; --close-sidebar-background: initial !important; --sidebar-background: initial !important; --prettyprint-color: initial !important; --prettyprint-background-color: initial !important; --code-container-border-color: initial !important; --list-option-button-background-color-gradient-2: initial !important; --list-option-button-background-color-gradient-1: initial !important; --list-option-button-border-color: initial !important; --list-option-button-color: initial !important; --list-option-button-background-color: initial !important; --field-with-errors: initial !important; --diff-block-info: initial !important; --diff-ins-strong-background: initial !important; --diff-del-strong-background: initial !important; --diff-ins-color: initial !important; --diff-ins-background: initial !important; --diff-del-color: initial !important; --diff-del-background: initial !important; --pagination-hover-background-color: initial !important; --pagination-background-color: initial !important; --expander-background-color: initial !important; --expander-color: initial !important; --rating-icon-good-color: initial !important; --rating-icon-good-background-color: initial !important; --rating-icon-good-border-color: initial !important; --rating-icon-bad-color: initial !important; --rating-icon-bad-background-color: initial !important; --rating-icon-bad-border-color: initial !important; --rating-icon-ok-color: initial !important; --rating-icon-ok-background-color: initial !important; --rating-icon-ok-border-color: initial !important; --highlight-background-color: initial !important; --chart-border-color: initial !important; --chart-background-color: initial !important; --alert-text-color: initial !important; --alert-border-color: initial !important; --alert-background-color: initial !important; --notice-text-color: initial !important; --notice-background-color: initial !important; --list-option-hover-box-shadow-bottom: initial !important; --list-option-hover-box-shadow-top: initial !important; --list-option-hover-background-color-gradient-2: initial !important; --list-option-hover-background-color-gradient-1: initial !important; --list-option-background-color-gradient-2: initial !important; --list-option-background-color-gradient-1: initial !important; --user-content-border-left-color: initial !important; --user-content-background-color-gradient-2: initial !important; --user-content-background-color-gradient-1: initial !important; --code-background-color: initial !important; --inactive-item-background-color: initial !important; --tab-active-box-shadow-color: initial !important; --tab-active-background-color: initial !important; --content-separator-color: initial !important; --content-box-shadow-color: initial !important; --content-border-color: initial !important; --content-background-color: initial !important; --texty-link-visited-color: initial !important; --link-visited-color: initial !important; --link-color: initial !important; --overall-text-color: initial !important; --overall-background-color: initial !important; --notice-border-color: initial !important; --tab-active-top-border-color: initial !important; --hidden-display: initial !important; --blacklisted-display: initial !important; --hyperlink-hidden-option-opacity: initial !important; --hyperlink-blacklisted-option-opacity: initial !important; --block-btn-bgcolor: initial !important; --block-btn-color: initial !important; --tab-scrollbuttons-display: initial !important; --panel-inner-box-margin: initial !important; --uc-font-weight-thin: initial !important; --uc-font-weight-semibold: initial !important; --uc-font-weight-bold: initial !important; --uc-font-weight-extrabold: initial !important; --uc-switch-off-hover-border: initial !important; --uc-switch-off-active-background: initial !important; --uc-switch-off-hover-background: initial !important; --uc-switch-off-background: initial !important; --uc-checkbox-checked-active-bgcolor: initial !important; --uc-checkbox-checked-hover-bgcolor: initial !important; --uc-checkbox-checked-color: initial !important; --uc-checkbox-checked-bgcolor: initial !important; --uc-checkbox-unchecked-active-bgcolor: initial !important; --uc-checkbox-unchecked-hover-bgcolor: initial !important; --uc-checkbox-unchecked-bgcolor: initial !important; --uc-checkbox-checked-border-color: initial !important; --uc-checkbox-border-color: initial !important; --uc-content-border-active: initial !important; --uc-content-border-hover: initial !important; --uc-content-border-color: initial !important; --uc-content-button-background-solid: initial !important; --uc-content-button-background-active: initial !important; --uc-content-button-background-hover: initial !important; --uc-content-button-background: initial !important; --uc-content-box-border-color: initial !important; --uc-content-box-background-dim: initial !important; --uc-content-box-background-odd: initial !important; --uc-content-box-background: initial !important; --uc-content-page-color: initial !important; --uc-content-page-background-light: initial !important; --uc-content-page-background: initial !important; --uc-parent-primary-button-text-color: initial !important; --uc-parent-primary-button-background-active: initial !important; --uc-parent-primary-button-background-hover: initial !important; --uc-parent-primary-button-background: initial !important; --uc-parent-link-color-active: initial !important; --uc-parent-link-color-hover: initial !important; --uc-parent-link-color: initial !important; --uc-parent-page-color: initial !important; --pink-action: initial !important; --pink-30: initial !important; --pink-35: initial !important; --pink-40: initial !important; --purple-80: initial !important; --purple-70: initial !important; --purple-50-a30: initial !important; --purple-55: initial !important; --purple-45: initial !important; --purple-40-a50: initial !important; --purple-40-a30: initial !important; --purple-40-a10: initial !important; --purple-40: initial !important; --purple-35: initial !important; --purple-30-a50: initial !important; --purple-30: initial !important; --purple-25: initial !important; --purple-20: initial !important; --indigo-50: initial !important; --indigo-45: initial !important; --indigo-40: initial !important; --indigo-30: initial !important; --ctrlTab-panel-focused-bgcolor: initial !important; --ctrlTab-panel-bgcolor: initial !important; --ctrlTab-panel-disabled-focused-bgcolor: initial !important; --ctrlTab-panel-disabled-bgcolor: initial !important; --ctrlTab-overlay-color: initial !important; --download-button-hover-bg: initial !important; --download-button-hue: initial !important; --download-button-focus-within-bg: initial !important; --uc-smooth-timing-function: initial !important; --uc-firefox-view-icon: initial !important; --fxa-ui-img: initial !important; --screenshot-icon: initial !important; --default-identity-icon: initial !important; --findbar-textbox-bg-notfound-transition-duration: initial !important; --findbar-textbox-bg-transition-duration: initial !important; --textbox-outline-transition-duration: initial !important; --findbar-max-width: initial !important; --findbar-min-width: initial !important; --findbar-height: initial !important; --subview-subheader-padding: initial !important; --subviewbutton-height: initial !important; --menuitem-height: initial !important; --tree-row-height: initial !important; --tab-button-border-radius: initial !important; --tab-max-width: initial !important; --uc-tab-min-height: initial !important; --uc-menubar-searchbar-width: initial !important; --uc-urlbar-container-height: initial !important; --urlbar-dim-button-bgcolor: initial !important; --urlbar-input-bgcolor-disabled: initial !important; --urlbar-input-bgcolor-brighter: initial !important; --urlbar-input-bgcolor: initial !important; --uc-toolbar-field-bgcolor-disabled: initial !important; --uc-toolbar-field-bgcolor-brighter: initial !important; --uc-toolbar-field-bgcolor: initial !important; --menu-separator-color: initial !important; --sanitize-border-color: initial !important; --busy-throbber-fill: initial !important; --loading-throbber-fill: initial !important; --urlbar-one-offs-engine-width: initial !important; --urlbar-results-bgcolor: initial !important; --urlbar-result-strong-font-weight: initial !important; --urlbar-base-font-weight: initial !important; --ebmp-double-focus-bgcolor: initial !important; --ebmp-focus-bgcolor: initial !important; --ebmp-hover-bgcolor: initial !important; --ebp-favicon-background-color: initial !important; --ebp-menulist-separator-color: initial !important; --ebp-menulist-menuitem-hover-background-color: initial !important; --ebp-menulist-background-color: initial !important; --ui-textbox-focus-bgcolor: initial !important; --ui-textbox-bgcolor: initial !important; --picture-in-picture-toggle-bgcolor: initial !important; --confirmation-hint-border-color: initial !important; --confirmation-hint-bgcolor: initial !important; --confirmation-hint-color: initial !important; --textbox-button-hidden: initial !important; --search-box-focus-outline-color: initial !important; --search-box-null: initial !important; --search-box-focus: initial !important; --search-box-color: initial !important; --titlebar-background: initial !important; --titlebar-gradient-left: initial !important; --titlebar-gradient: initial !important; --titlebar-spacer-width: initial !important; --multiselected-color: initial !important; --uc-tab-focused-hover: initial !important; --uc-tab-focused-highlight: initial !important; --uc-tab-pinned-hover: initial !important; --uc-tab-multi-hover: initial !important; --uc-tab-multi: initial !important; --uc-tab-hover: initial !important; --uc-tab-selected: initial !important; --uc-tab-background: initial !important; --aboutPrefs-find-tags: initial !important; --solid-selection-bgcolor: initial !important; --pdf-highlight-bgcolor: initial !important; --pdf-selection-bgcolor: initial !important; --content-selection-bgcolor-disabled: initial !important; --content-selection-color: initial !important; --content-selection-bgcolor: initial !important; --ui-selection-bgcolor-disabled: initial !important; --ui-selection-color: initial !important; --ui-selection-bgcolor: initial !important; --global-selection-bgcolor-disabled: initial !important; --global-selection-color: initial !important; --global-selection-bgcolor: initial !important; --uc-destructive-color: initial !important; --uc-destructive-active-bgcolor: initial !important; --uc-destructive-hover-bgcolor: initial !important; --uc-destructive-bgcolor: initial !important; --eom-error-bg-active: initial !important; --eom-error-bg-hover: initial !important; --eom-error-bg: initial !important; --eom-warning-bg-active: initial !important; --eom-warning-bg-hover: initial !important; --eom-warning-bg: initial !important; --attention-color: initial !important; --update-badge-inactive: initial !important; --update-badge-color: initial !important; --update-badge-bg: initial !important; --protection-active-color: initial !important; --protection-idle-color: initial !important; --low-warning-icon-stroke: initial !important; --low-warning-icon-detail: initial !important; --low-warning-icon-background: initial !important; --low-warning-border-color: initial !important; --low-warning-text-color: initial !important; --low-warning-color: initial !important; --low-warning-background: initial !important; --warning-icon-stroke: initial !important; --warning-icon-detail: initial !important; --warning-icon-background: initial !important; --warning-text-color: initial !important; --uc-warning-background: initial !important; --warning-color: initial !important; --secure-text-color: initial !important; --secure-color: initial !important; --identity-box-focus-bg: initial !important; --identity-box-solid-bg: initial !important; --default-search-identity-icon: initial !important; --primary-button-disabled-color: initial !important; --primary-button-disabled-background: initial !important; --uc-menu-semi-disabled-color: initial !important; --uc-menu-disabled-color: initial !important; --ui-disabled-alpha: initial !important; --notification-menu-color: initial !important; --alertbox-bgcolor: initial !important; --blurred-dialog-border-color: initial !important; --dialog-box-border-hover: initial !important; --dialog-box-border-color: initial !important; --dialog-box-bgcolor-dim: initial !important; --dialog-box-bgcolor: initial !important; --dialog-bgcolor: initial !important; --acrylic-blue: initial !important; --acrylic-texture: initial !important; --acrylic-blur: initial !important; --primary-color-faint: initial !important; --global-focus-outline-offset: initial !important; --global-focus-shadow: initial !important; --global-focus-outline: initial !important; --global-focus-outline-width: initial !important; --global-focus-outline-color: initial !important; --global-focus-shadow-color: initial !important; --ui-quaternary-bg: initial !important; --ui-tertiary-bg: initial !important; --ui-secondary-bg: initial !important; --autocomplete-background: initial !important; --popup-on-popup-contrast-bg: initial !important; --chrome-scrollbar-thumb-color: initial !important; --chrome-scrollbar-track-color: initial !important; --chrome-scrollbar-width: initial !important; --menu-separator-margin: initial !important; --menu-right-size: initial !important; --menu-right-margin: initial !important; --menu-right-img: initial !important; --menu-right-bg: initial !important; --general-button-border-radius: initial !important; --context-menuitem-border-radius: initial !important; --panel-border-radius-mini: initial !important; --menupopup-border-radius: initial !important; --menulist-dropmarker-margin: initial !important; --panel-menulist-padding: initial !important; --context-padding-inline: initial !important; --context-iconic-composite-width: initial !important; --context-checkbox-margin: initial !important; --context-checkbox-margin-end: initial !important; --context-checkbox-margin-start: initial !important; --context-iconic-margin: initial !important; --context-iconic-margin-end: initial !important; --context-iconic-margin-start: initial !important; --arrowpanel-subviewbutton-iconic-gap: initial !important; --uc-arrowpanel-root-padding: initial !important; --uc-arrowpanel-menuitem-padding-inline: initial !important; --uc-arrowpanel-menuitem-padding-block: initial !important; --uc-arrowpanel-menuitem-margin-inline: initial !important; --uc-arrowpanel-menuitem-margin-block: initial !important; --uc-panel-separator-margin: initial !important; --uc-panel-separator-margin-horizontal: initial !important; --uc-panel-separator-margin-vertical: initial !important; --menupopup-inner-padding: initial !important; --menupopup-inner-padding-magnitude: initial !important; --menupopup-padding: initial !important; --menupopup-child-margin-inline-start: initial !important; --menupopup-child-margin-block-start: initial !important; --menupopup-background: initial !important; --menupopup-margin: initial !important; --webextension-panel-border-radius: initial !important; --uc-toolbarbutton-inner-padding: initial !important; --searchbar-popup-box-shadow-size: initial !important; --searchbar-popup-box-shadow: initial !important; --searchbar-popup-border-radius: initial !important; --searchbar-popup-border: initial !important; --light-on-dark-button-text-color: initial !important; --uc-places-cell-hover-bgcolor: initial !important; --uc-places-cell-focus-bgcolor: initial !important; --uc-panel-shortcut-focus: initial !important; --uc-panel-shortcut-color: initial !important; --uc-panel-description-color: initial !important; --uc-toolbarbutton-badge-bgcolor: initial !important; --uc-toolbarbutton-checked-active-background: initial !important; --uc-toolbarbutton-active-background: initial !important; --uc-toolbarbutton-hover-background: initial !important; --uc-toolbarbutton-checked-background: initial !important; --button-solid-checked-background: initial !important; --button-solid-active-background: initial !important; --button-solid-hover-background: initial !important; --uc-panel-box-solid: initial !important; --uc-panel-button-faint-solid: initial !important; --uc-panel-button-solid: initial !important; --uc-content-text-a80: initial !important; --uc-content-text-a50: initial !important; --uc-desaturate-dimmed-even-further: initial !important; --uc-desaturate-dimmed-further: initial !important; --uc-desaturate-dimmed: initial !important; --uc-desaturate-semi-faint: initial !important; --uc-desaturate-faint: initial !important; --uc-arrowpanel-dimmed-even-further: initial !important; --uc-arrowpanel-dimmed-further: initial !important; --uc-arrowpanel-dimmed: initial !important; --uc-arrowpanel-faint: initial !important; --uc-arrowpanel-very-faint: initial !important; --uc-arrowpanel-color: initial !important; --uc-arrowpanel-background: initial !important; --uc-toolbar-field-color: initial !important; --uc-toolbar-color: initial !important; --uc-toolbar-bgcolor: initial !important; --uc-frame-color: initial !important; --uc-accent-color: initial !important; --ui-text-100: initial !important; --ui-text-90: initial !important; --ui-text-80: initial !important; --ui-text-70: initial !important; --ui-text-60: initial !important; --ui-text-50: initial !important; --ui-text-40: initial !important; --ui-text-30: initial !important; --ui-text-20: initial !important; --ui-text-10: initial !important; --transparent-img-background: initial !important; --transparent-img-background-context: initial !important; --tooltip-box-shadow: initial !important; --tooltip-border-color: initial !important; --tooltip-border-radius: initial !important; --tooltip-color: initial !important; --tooltip-bgcolor: initial !important; --uc-menu-border-color: initial !important; --plaintext-color: initial !important; --in-content-border-color-dim: initial !important; --in-content-separator-dim: initial !important; --in-content-button-highlight-dark: initial !important; --in-content-box-bg-dark: initial !important; --in-content-bg-darker: initial !important; --in-content-bg-dark: initial !important;"><template shadowrootmode=open><div><style>.infobar,.infobar .infobar-icon,.infobar .infobar-link-icon {min-inline-size:28px;min-block-size:28px;box-sizing:border-box;}.infobar,.infobar .infobar-close-icon,.infobar .infobar-link-icon {opacity:0.7;transition:opacity 250ms;}.infobar:hover,.infobar .infobar-close-icon:hover,.infobar .infobar-link-icon:hover {opacity:1;}.infobar,.infobar-content {display:flex;}.infobar {position:fixed;max-height:calc(100% - 32px);top:16px;right:16px;margin-inline-start:16px;margin-block-end:16px;color:#2d2d2d;background-color:#737373;border:2px solid;border-color:#eee;border-radius:16px;z-index:2147483647;animation-name:flash;animation-duration:.5s;animation-timing-function:cubic-bezier(0.39,0.58,0.57,1);animation-delay:1s;animation-iteration-count:2;}.infobar:valid,.infobar:not(:focus-within):not(.infobar-focus) .infobar-content {display:none;}.infobar:focus-within,.infobar.infobar-focus {background-color:#f9f9f9;border-color:#878787;border-radius:8px;opacity:1;transition-property:opacity,background-color,border-color,border-radius,color;}.infobar-content {border:2px solid;border-color:#f9f9f9;border-radius:6px;background-color:#f9f9f9;overflow:auto;}.infobar-content span {font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:18px;word-break:break-word;white-space:pre-wrap;margin-inline:4px;margin-block:4px;}.infobar .infobar-icon,.infobar .infobar-close-icon,.infobar .infobar-link-icon {cursor:pointer;background-position:center;background-repeat:no-repeat;}.infobar .infobar-close-icon,.infobar .infobar-link-icon {align-self:flex-start;}.infobar .infobar-icon {position:absolute;min-inline-size:24px;min-block-size:24px;}@keyframes flash {0%,100% {	background-color:#737373;}50% {	background-color:#dd6a00;}}.infobar:focus-within .infobar-icon,.infobar.infobar-focus .infobar-icon {z-index:-1;background-image:none;margin:4px;}.infobar .infobar-close-icon {min-inline-size:22px;min-block-size:22px;}.infobar .infobar-icon {background-color:transparent;background-size:70%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAABhmlDQ1BJQ0MgcHJvZmlsZQAAKJF9kj1Iw0AYht+mSkUrDnYQcchQnSyIijqWKhbBQmkrtOpgcukfNGlIUlwcBdeCgz+LVQcXZ10dXAVB8AfEydFJ0UVK/C4ptIjx4LiH9+59+e67A4RGhalm1wSgapaRisfEbG5VDLyiDwEAvZiVmKkn0osZeI6ve/j4ehfhWd7n/hz9St5kgE8kjjLdsIg3iGc2LZ3zPnGIlSSF+Jx43KACiR+5Lrv8xrnosMAzQ0YmNU8cIhaLHSx3MCsZKvE0cVhRNcoXsi4rnLc4q5Uaa9XJbxjMaytprtMcQRxLSCAJETJqKKMCCxFaNVJMpGg/5uEfdvxJcsnkKoORYwFVqJAcP/gb/O6tWZiadJOCMaD7xbY/RoHALtCs2/b3sW03TwD/M3Cltf3VBjD3SXq9rYWPgIFt4OK6rcl7wOUOMPSkS4bkSH6aQqEAvJ/RM+WAwVv6EGtu31r7OH0AMtSr5Rvg4BAYK1L2use9ezr79u+ZVv9+AFlNcp0UUpiqAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5AsHADIRLMaOHwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAPUExURQAAAIqKioyNjY2OjvDw8L2y1DEAAAABdFJOUwBA5thmAAAAAWJLR0QB/wIt3gAAAGNJREFUSMdjYCAJsLi4OBCQx6/CBQwIGIDPCBcXAkYQUsACU+AwlBVQHg6Eg5pgZBGOboIJZugDFwRwoJECJCUOhJI1wZwzqmBUwagCuipgIqTABG9h7YIKaKGAURAFEF/6AQAO4HqSoDP8bgAAAABJRU5ErkJggg==);}.infobar .infobar-link-icon {right:4px;background-size:60%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAgMAAADXB5lNAAABhmlDQ1BJQ0MgcHJvZmlsZQAAKJF9kj1Iw0AYht+mSkUrDnYQcchQnSyIijqWKhbBQmkrtOpgcukfNGlIUlwcBdeCgz+LVQcXZ10dXAVB8AfEydFJ0UVK/C4ptIjx4LiH9+59+e67A4RGhalm1wSgapaRisfEbG5VDLyiDwEAvZiVmKkn0osZeI6ve/j4ehfhWd7n/hz9St5kgE8kjjLdsIg3iGc2LZ3zPnGIlSSF+Jx43KACiR+5Lrv8xrnosMAzQ0YmNU8cIhaLHSx3MCsZKvE0cVhRNcoXsi4rnLc4q5Uaa9XJbxjMaytprtMcQRxLSCAJETJqKKMCCxFaNVJMpGg/5uEfdvxJcsnkKoORYwFVqJAcP/gb/O6tWZiadJOCMaD7xbY/RoHALtCs2/b3sW03TwD/M3Cltf3VBjD3SXq9rYWPgIFt4OK6rcl7wOUOMPSkS4bkSH6aQqEAvJ/RM+WAwVv6EGtu31r7OH0AMtSr5Rvg4BAYK1L2use9ezr79u+ZVv9+AFlNcp0UUpiqAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5AsHAB8H+DhhoQAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAJUExURQAAAICHi4qKioTuJAkAAAABdFJOUwBA5thmAAAAAWJLR0QCZgt8ZAAAAJJJREFUOI3t070NRCEMA2CnYAOyDyPwpHj/Va7hJ3FzV7zy3ET5JIwoAF6Jk4wzAJAkzxAYG9YRTgB+24wBgKmfrGAKTcEfAY4KRlRoIeBTgKOCERVaCPgU4Khge2GqKOBTgKOCERVaAEC/4PNcnyoSWHpjqkhwKxbcig0Q6AorXYF/+A6eIYD1lVbwG/jdA6/kA2THRAURVubcAAAAAElFTkSuQmCC);}.infobar .infobar-close-icon {appearance:none;background-size:80%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAgMAAADXB5lNAAABhmlDQ1BJQ0MgcHJvZmlsZQAAKJF9kj1Iw0AYht+mSkUrDnYQcchQnSyIijqWKhbBQmkrtOpgcukfNGlIUlwcBdeCgz+LVQcXZ10dXAVB8AfEydFJ0UVK/C4ptIjx4LiH9+59+e67A4RGhalm1wSgapaRisfEbG5VDLyiDwEAvZiVmKkn0osZeI6ve/j4ehfhWd7n/hz9St5kgE8kjjLdsIg3iGc2LZ3zPnGIlSSF+Jx43KACiR+5Lrv8xrnosMAzQ0YmNU8cIhaLHSx3MCsZKvE0cVhRNcoXsi4rnLc4q5Uaa9XJbxjMaytprtMcQRxLSCAJETJqKKMCCxFaNVJMpGg/5uEfdvxJcsnkKoORYwFVqJAcP/gb/O6tWZiadJOCMaD7xbY/RoHALtCs2/b3sW03TwD/M3Cltf3VBjD3SXq9rYWPgIFt4OK6rcl7wOUOMPSkS4bkSH6aQqEAvJ/RM+WAwVv6EGtu31r7OH0AMtSr5Rvg4BAYK1L2use9ezr79u+ZVv9+AFlNcp0UUpiqAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5AsHAB8VC4EQ6QAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAJUExURQAAAICHi4qKioTuJAkAAAABdFJOUwBA5thmAAAAAWJLR0QCZgt8ZAAAAJtJREFUOI3NkrsBgCAMRLFwBPdxBArcfxXFkO8rbKWAAJfHJ9faf9vuYX/749T5NmShm3bEwbe2SxeuM4+2oxDL1cDoKtVUjRy+tH78Cv2CS+wIiQNC1AEhk4AQeUTMWUJMfUJMSEJMSEY8kIx4IONroaYAimNxsXp1PA7PxwfVL8QnowwoVC0lig07wDDVUjAdbAnjwtow/z/bDW7eI4M2KruJAAAAAElFTkSuQmCC);}.infobar { top:16px; bottom:auto; }.infobar { right:16px; left:auto; }</style><form class="infobar infobar-focus"><span tabindex="-1" class="infobar-icon"></span><span tabindex="-1" class="infobar-content"><input type="checkbox" required="" class="infobar-close-icon" title="Close"><span>Sun Dec 28 2025 01:20:19 GMT-0800 (Pacific Standard Time)</span><a class="infobar-link-icon" target="_blank" rel="noopener noreferrer" title="Open source URL: https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive" href="https://greasyfork.org/en/scripts/430049-allow-sidebar-hide-google-drive"></a></span></form><script>function Wo(n,{saveUrl:e,infobarContent:t,saveDate:a}){if(e){const o=n.querySelector("single-file-infobar").shadowRoot;o.querySelector(".infobar-content span").textContent=t||a;const i=o.querySelector(".infobar-content .infobar-link-icon");i.href=e,i.title="Open source URL: "+e}};function Ho(n,e=_o){const t=n.evaluate("//comment()",n,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null);let a=t&&t.singleNodeValue;if(a&&a.nodeType==Node.COMMENT_NODE&&a.textContent.includes(e)){const n=a.textContent.split("\n"),[,,e,...t]=n,o=e.match(/^ url: (.*) ?$/),i=o&&o[1];if(i){let n,e;if(t.length&&(e=t[0].split("saved date: ")[1],e&&t.shift(),t.length>1)){let e=t[0].split("info: ")[1].trim();for(let n=1;n<t.length-1;n++)e+="\n"+t[n].trim();n=e.trim()}return{saveUrl:i,infobarContent:n,saveDate:e}}}};(function Go(n,e){const t=Ho(n,e);t&&t.saveUrl&&Wo(n,t)})(document, "SingleFile");</script></div></template></single-file-infobar>
